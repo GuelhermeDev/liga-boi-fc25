@@ -23,6 +23,17 @@ document.addEventListener('DOMContentLoaded', function() {
             fetchPartidas(currentPage - 1, 10);
         }
     });
+
+    // Adiciona o botão de toggle do menu
+    var sidebar = document.querySelector('.sidebar');
+    var toggleButton = document.createElement('div');
+    toggleButton.className = 'menu-toggle';
+    toggleButton.innerText = 'Menu';
+    document.body.insertBefore(toggleButton, document.body.firstChild);
+
+    toggleButton.addEventListener('click', function() {
+        sidebar.classList.toggle('active');
+    });
 });
 
 function fetchJogadores() {
@@ -165,10 +176,17 @@ function fetchJogadoresPontos() {
                 const row = jogadoresTable.insertRow();
                 const cellNome = row.insertCell(0);
                 const cellPontos = row.insertCell(1);
+                const cellPartidas = row.insertCell(2); // Novo campo
 
                 cellNome.textContent = jogador.nome;
                 cellPontos.textContent = jogador.pontos;
+                cellPartidas.textContent = jogador.numeroDePartidas; // Novo campo
             });
         })
         .catch(error => console.error('Erro ao buscar jogadores e pontos:', error));
+}
+
+function toggleMenu() {
+    document.querySelector('.sidebar').classList.toggle('active');
+    document.querySelector('.content').classList.toggle('active');
 }

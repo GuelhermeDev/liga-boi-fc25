@@ -28,14 +28,20 @@
         <form id="partidaForm">
             <div class="match-entry">
                 <div class="player">
-                    <select class="form-control" id="jogador1" required></select>
+                    <select class="form-control" id="jogador1" name ="Jogador" required>
+                        <option value="" disabled selected>Selecione o Jogador</option>
+                        <!-- As opções serão preenchidas pelo JavaScript -->
+                    </select>
                     <input type="text" class="form-control" id="timeJogador1" placeholder="Time" required>
                 </div>
                 <input type="number" class="form-control score" id="placarJogador1" required>
                 <span class="versus">X</span>
                 <input type="number" class="form-control score" id="placarJogador2" required>
                 <div class="player">
-                    <select class="form-control" id="jogador2" required></select>
+                    <select class="form-control" id="jogador2" name="Jogador" required>
+                        <option value="" disabled selected>Selecione o Jogador</option>
+                        <!-- As opções serão preenchidas pelo JavaScript -->
+                    </select>
                     <input type="text" class="form-control" id="timeJogador2" placeholder="Time" required>
                 </div>
             </div>

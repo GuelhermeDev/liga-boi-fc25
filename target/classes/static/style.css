@@ -15,6 +15,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     font-weight: bold;
+    transition: transform 0.3s ease;
 }
 
 .sidebar .logo {
@@ -47,6 +48,7 @@ body {
 .content {
     margin-left: 250px;
     padding: 20px;
+    transition: margin-left 0.3s ease;
 }
 
 .container {
@@ -109,8 +111,7 @@ body {
 
 .table td:nth-child(1),
 .table td:nth-child(2),
-.table td:nth-child(3),
-.table td:nth-child(4) {
+.table td:nth-child(3) {
     white-space: nowrap;
 }
 
@@ -132,4 +133,47 @@ input[type="number"] {
 .btn-primary:hover {
     background-color: #D17A0C;
     border-color: #D17A0C;
+}
+
+/* Media queries para dispositivos móveis */
+@media screen and (max-width: 600px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    .content {
+        margin-left: 0;
+    }
+    .menu-toggle {
+        display: block;
+        background-color: #F1900E;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
+select.form-control {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease-in-out;
+}
+
+select.form-control:focus {
+    border-color: #F1900E;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(241, 144, 14, 0.25);
 }

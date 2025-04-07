@@ -16,7 +16,7 @@ public class Jogador {
     private Long id;
     private String nome;
     private int pontos;
-
+    private int numeroDePartidas;
 
 
 
@@ -43,4 +43,13 @@ public class Jogador {
     public void setPontos(int pontos) {
         this.pontos = pontos;
     }
+
+    public int getNumeroDePartidas() {
+        return numeroDePartidas;
+    }
+
+    public void setNumeroDePartidas(int numeroDePartidas) {
+        this.numeroDePartidas = numeroDePartidas;
+    }
+
 }

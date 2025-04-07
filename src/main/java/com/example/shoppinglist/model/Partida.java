@@ -24,6 +24,8 @@ public class Partida {
     private String timeJogador1;
     private String timeJogador2;
 
+
+
     public Long getId() {
         return id;
     }

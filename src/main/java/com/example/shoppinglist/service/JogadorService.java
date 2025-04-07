@@ -56,4 +56,13 @@ public class JogadorService {
     public List<Jogador> findAllWithPoints() {
         return jogadorRepository.findAllWithPoints();
     }
+
+    public void atualizarNumeroDePartidas() {
+        List<Jogador> jogadores = jogadorRepository.findAll();
+        for (Jogador jogador : jogadores) {
+            int numeroDePartidas = partidaRepository.countPartidasByNome(jogador.getNome());
+            jogador.setNumeroDePartidas(numeroDePartidas);
+            jogadorRepository.save(jogador);
+        }
+    }
 }
